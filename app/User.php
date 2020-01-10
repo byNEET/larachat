@@ -36,4 +36,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //KARENA USER BISA MEMILIKI LEBIH DARI SATU PESAN, MAKA KITA GUNAKAN HASmANY
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
 }
